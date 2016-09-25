@@ -6,20 +6,21 @@ package strategyPattern;
 public abstract class MathSoftware {
     SortStrategy sortStrategy;
     int[] array = {1,3,4,6,8,9,7,2,5,0};
+    int[] sortedArray;
 
     public MathSoftware(){}
 
     public void performSort(){
-        array = sortStrategy.mathSort(array);
+        sortedArray = sortStrategy.mathSort(array);
     }
 
     public void setSortStrategy(SortStrategy ss){
         sortStrategy = ss;
     }
 
-    public void printArray(){
-        for (int i:array) {
-            System.out.print(array[i]);
+    public void printArray(int[] a){
+        for (int i:a) {
+            System.out.print(a[i] + " ");
         }
         System.out.println();
     }
