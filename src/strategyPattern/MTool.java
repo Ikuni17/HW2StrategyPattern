@@ -6,6 +6,7 @@ package strategyPattern;
 public class MTool extends MathSoftware{
     public MTool(){
         sortStrategy = new MergeSort();
+        name = "MTool";
     }
 
 }

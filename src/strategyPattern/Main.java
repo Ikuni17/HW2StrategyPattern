@@ -15,30 +15,61 @@ public class Main {
         System.out.print("Enter corresponding number for: 1. Mathematica, 2. MTool, 3. MyMath: ");
         int input = getInt();
 
-        switch(input){
+        switch (input) {
             case 1:
                 MathSoftware ms1 = new Mathematica();
-                System.out.print("The unsorted array is: ");
-                ms1.printArray(ms1.array);
-                ms1.performSort();
-                System.out.print("The sorted array is: ");
-                ms1.printArray(ms1.sortedArray);
+                sort(ms1);
+                dynamicSort(ms1);
                 break;
             case 2:
                 MathSoftware ms2 = new MTool();
-                System.out.print("The unsorted array is: ");
-                ms2.printArray(ms2.array);
-                ms2.performSort();
-                System.out.print("The sorted array is: ");
-                ms2.printArray(ms2.sortedArray);
+                sort(ms2);
+                dynamicSort(ms2);
                 break;
             case 3:
                 MathSoftware ms3 = new MTool();
-                System.out.print("The unsorted array is: ");
-                ms3.printArray(ms3.array);
-                ms3.performSort();
-                System.out.print("The sorted array is: ");
-                ms3.printArray(ms3.sortedArray);
+                sort(ms3);
+                dynamicSort(ms3);
+                break;
+        }
+    }
+
+    public static void sort(MathSoftware ms) {
+        System.out.println("Starting " + ms.getName() + " using " + ms.sortStrategy.getName() + ".");
+        System.out.print("The unsorted array is: ");
+        ms.printArray(ms.array);
+        ms.performSort(ms.array);
+        System.out.print("The sorted array is: ");
+        ms.printArray(ms.array);
+        System.out.println();
+    }
+
+    public static void sort2(MathSoftware ms) {
+        System.out.println("Starting " + ms.getName() + " using " + ms.sortStrategy.getName() + ".");
+        System.out.print("The unsorted array is: ");
+        ms.printArray(ms.array2);
+        ms.performSort(ms.array2);
+        System.out.print("The sorted array is: ");
+        ms.printArray(ms.array2);
+        System.out.println();
+    }
+
+    public static void dynamicSort(MathSoftware ms) throws IOException {
+        System.out.print("Enter corresponding number to switch sorting algorithm: 1. Insertion Sort, 2. Bubble Sort, 3. Merge Sort: ");
+        int input = getInt();
+
+        switch (input) {
+            case 1:
+                ms.setSortStrategy(new InsertionSort());
+                sort2(ms);
+                break;
+            case 2:
+                ms.setSortStrategy(new BubbleSort());
+                sort2(ms);
+                break;
+            case 3:
+                ms.setSortStrategy(new MergeSort());
+                sort2(ms);
                 break;
         }
     }

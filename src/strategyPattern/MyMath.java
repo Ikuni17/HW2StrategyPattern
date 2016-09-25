@@ -6,5 +6,6 @@ package strategyPattern;
 public class MyMath extends MathSoftware {
     public MyMath(){
         sortStrategy = new BubbleSort();
+        name = "MyMath";
     }
 }

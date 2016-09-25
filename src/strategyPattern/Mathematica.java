@@ -6,5 +6,6 @@ package strategyPattern;
 public class Mathematica extends MathSoftware{
     public Mathematica(){
         sortStrategy = new InsertionSort();
+        name = "Mathematica";
     }
 }
