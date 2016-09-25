@@ -1,16 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Sam Congdon & Bradley White
+// ESOF 322
+// HW #2, Strategy Pattern
+// September 25, 2016
 
-/**
- * @author Samuel
- */
 package strategyPattern;
 
 public interface SortStrategy {
-    public int[] mathSort(int[] array);
+    // Return the int array after it has been passed as a parameter, redundant because of pass by reference
+    int[] mathSort(int[] array);
 
-    public String getName();
+    // Return the name of a sorting algorithm
+    String getName();
 }//end SortStrategy
